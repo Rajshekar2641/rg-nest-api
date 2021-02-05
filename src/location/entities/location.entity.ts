@@ -1,16 +1,15 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
-@Entity()
+@Entity('Location')
+
 export class Location {
     @PrimaryGeneratedColumn()
-id: number;
+    id:number;
 
-    @Column()
+    @Column({type:'double'})
     latitude: number;
 
-    @Column()
-    longitude: number;
+    @Column({type:'double'})
+    longitude:number;
 
-    @Column({ default: true })
-    isActive: boolean;
 }

@@ -9,12 +9,8 @@ import { LocationModule } from './location/location.module';
 
 @Module({
   imports: [TypeOrmModule.forRoot({
-    type: 'mysql',
-    host: 'localhost',
-    port: 3306,
-    username: 'root',
-    password: 'Raj@2641',
-    database: 'test',
+    type: 'sqlite',
+    database: 'test.db',
     entities: [User],
     synchronize: true,
   }),QuestModule, UserModule, LocationModule],

@@ -10,41 +10,30 @@ import { UpdateResult, DeleteResult } from  'typeorm';
 export class UserService {
   constructor(
     @InjectRepository(User)
-    private usersRepository: Repository<User>,
+    private userRepository: Repository<User>,
   ) {}
   // create(createUserDto: CreateUserDto) {
   //   return 'This action adds a new user';
   // }
 
-  // findAll() {
-  //   return `This action returns all user`;
-  // }
-
-  // findOne(id: number) {
-  //   return `This action returns a #${id} user`;
-  // }
-
-  // update(id: number, updateUserDto: UpdateUserDto) {
-  //   return `This action updates a #${id} user`;
-  // }
-
-  // remove(id: number) {
-  //   return `This action removes a #${id} user`;
-  // }
-
   async  findAll(): Promise<User[]> {
-    return await this.usersRepository.find();
+    return await this.userRepository.find();
 }
 
-async  create(user: User): Promise<User> {
-    return await this.usersRepository.save(user);
-}
+ async findById(id: number): Promise<User> {
+  return await this.userRepository.findOne(id);
+  
+ }
 
-async update(user: User): Promise<UpdateResult> {
-    return await this.usersRepository.update(user.id, user);
+ async update(user: User): Promise<UpdateResult> {
+  return await this.userRepository.update(user.id, user);
 }
 
 async delete(id): Promise<DeleteResult> {
-    return await this.usersRepository.delete(id);
+  return await this.userRepository.delete(id);
+}
+
+async  create(user: User): Promise<User> {
+  return await this.userRepository.save(user);
 }
 }

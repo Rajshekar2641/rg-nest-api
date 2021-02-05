@@ -28,9 +28,11 @@
     "@nestjs/typeorm": "^7.1.5",
     "hbs": "^4.1.1",
     "mysql2": "^2.2.5",
+    "node-pre-gyp": "^0.17.0",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^6.6.3",
+    "sqlite3": "^5.0.1",
     "typeorm": "^0.2.30"
   },
   "devDependencies": {
